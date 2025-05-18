@@ -1,19 +1,19 @@
 {
-    "name": "bikeclub/bikeclub_editorial_workflow",
-    "description": "Provides editorial workflow for Content creators and Editors to manage all content except rides.",
-    "keywords": ["recipe", "Drupal standard install"],
-    "type": "drupal-recipe",
-    "license": "GPL-2.0-or-later",
-    "authors": [
-        {
-            "name": "Nancy Cole",
-            "homepage": "https://bikeclubsites.com",
-            "role": "Maintainer"
-        }
-    ],
-    "require": {
-		"drupal/content_moderation_notifications": ">=3.0",
-		"drupal/diff": ">=1.0"
-    },
-    "version": "1.0.1"
+  "name": "bikeclub/bikeclub_editorial_workflow",
+  "description": "Provides editorial workflow for Content creators and Editors to manage all content except rides.",
+  "keywords": ["recipe", "Drupal standard install"],
+  "type": "drupal-recipe",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Nancy Cole",
+      "homepage": "https://bikeclubsites.com",
+      "role": "Maintainer"
+    }
+  ],
+  "require": {
+    "drupal/content_moderation_notifications": ">=3.0",
+    "drupal/diff": ">=1.0"
+  },
+  "version": "1.0.1"
 }
