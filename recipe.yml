@@ -1,0 +1,78 @@
+name: 'Bikeclub Editorial workflow'
+description: 'Provides editorial workflow for all content types except rides.'
+type: 'Workflow'
+install:
+  - content_moderation
+  - node
+  - views
+  - workflows
+  # Contrib.
+  - content_moderation_notifications
+  - diff
+config:
+  actions:
+    workflows.workflow.editorial:
+      addNodeTypes:
+        - announcement
+        - event
+        - faqs
+        - page
+        - webform_node
+    # Editor and content_creator are created in config folder.
+    # Workflow permissions are listed here to easily compare roles.
+    user.role.content_creator:
+      grantPermissions:
+        - 'use editorial transition create_new_draft'
+        - 'use editorial transition finalize_draft'
+        - 'view all revisions'
+        - 'view own unpublished media'        
+      grantPermissionsForEachNodeType:
+        - 'clone %bundle content'
+        - 'create %bundle content'
+        - 'configure editable %bundle node layout overrides'
+        - 'edit own %bundle content'
+        - 'delete own %bundle content'
+      grantPermissionsForEachMediaType:
+        - 'create %bundle media'
+        - 'delete own %bundle media'
+        - 'edit own %bundle media'
+    user.role.editor:
+       grantPermissions:
+        - 'use editorial transition create_new_draft'
+        - 'use editorial transition finalize_draft'
+        - 'use editorial transition publish'
+        - 'use editorial transition publish_notify'
+        - 'use editorial transition unpublish'
+        - 'view all revisions'
+        - 'view unpublished media'        
+      grantPermissionsForEachNodeType:
+        - 'clone %bundle content'
+        - 'create %bundle content'
+        - 'configure editable %bundle node layout overrides'
+        - 'edit any %bundle content'
+        - 'delete any %bundle content'
+      grantPermissionsForEachMediaType:
+        - 'create %bundle media'
+        - 'delete any %bundle media'
+        - 'edit any %bundle media'
+    user.role.site_admin:
+      createIfNotExists:
+        label: 'Site administrator'      
+      grantPermissions:
+        - 'assign content_creator role'
+        - 'assign editor role'
+        - 'use editorial transition create_new_draft'
+        - 'use editorial transition finalize_draft'
+        - 'use editorial transition publish'
+        - 'use editorial transition publish_notify'
+        - 'use editorial transition unpublish'
+        - 'view all revisions'
+      grantPermissionsForEachNodeType:
+        - 'clone %bundle content'
+        - 'create %bundle content'
+        - 'edit any %bundle content'
+        - 'delete any %bundle content'
+      grantPermissionsForEachMediaType:
+        - 'create %bundle media'
+        - 'delete any %bundle media'
+        - 'edit any %bundle media'

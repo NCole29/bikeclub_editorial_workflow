@@ -1,0 +1,34 @@
+langcode: en
+status: true
+id: content_creator
+label: 'Content creator'
+weight: 6
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access block library'
+  - 'access coffee'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access help pages'  
+  - 'access media overview'
+  - 'access toolbar'
+  - 'access any webform configuration'
+  - 'access webform help'
+  - 'access webform overview'
+  - 'create basic block content'
+  - 'create media'
+  - 'create webform'
+  - 'delete media'
+  - 'delete own webform'
+  - 'delete webform submissions own node'
+  - 'edit any basic block content'
+  - 'edit own webform'
+  - 'update media'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view unpublished paragraphs'
+  - 'view the administration theme'
+  - 'view webform submissions own node'
+
+  
