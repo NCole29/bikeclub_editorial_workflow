@@ -37,7 +37,7 @@ config:
         - 'delete own %bundle media'
         - 'edit own %bundle media'
     user.role.editor:
-       grantPermissions:
+      grantPermissions:
         - 'use editorial transition create_new_draft'
         - 'use editorial transition finalize_draft'
         - 'use editorial transition publish'
