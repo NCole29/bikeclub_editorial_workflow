@@ -1,5 +1,5 @@
 name: 'Bikeclub Editorial workflow'
-description: 'Provides editorial workflow for all content types except rides.'
+description: 'Provides user roles and editorial workflow for content types other than rides. (Ride recipe includes this for rides.)'
 type: 'Workflow'
 install:
   - content_moderation
