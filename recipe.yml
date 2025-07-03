@@ -10,14 +10,13 @@ install:
   - content_moderation_notifications
   - diff
 config:
+  strict: false
   actions:
     workflows.workflow.editorial:
       addNodeTypes:
         - announcement
-        - event
         - faqs
         - page
-        - webform_node
     # Editor and content_creator are created in config folder.
     # Workflow permissions are listed here to easily compare roles.
     user.role.content_creator:
@@ -35,7 +34,7 @@ config:
       grantPermissionsForEachMediaType:
         - 'create %bundle media'
         - 'delete own %bundle media'
-        - 'edit own %bundle media'
+        - 'update own %bundle media'
     user.role.editor:
       grantPermissions:
         - 'use editorial transition create_new_draft'
@@ -54,7 +53,7 @@ config:
       grantPermissionsForEachMediaType:
         - 'create %bundle media'
         - 'delete any %bundle media'
-        - 'edit any %bundle media'
+        - 'update any %bundle media'
     user.role.site_admin:
       createIfNotExists:
         label: 'Site administrator'      
@@ -75,4 +74,4 @@ config:
       grantPermissionsForEachMediaType:
         - 'create %bundle media'
         - 'delete any %bundle media'
-        - 'edit any %bundle media'
+        - 'update any %bundle media'

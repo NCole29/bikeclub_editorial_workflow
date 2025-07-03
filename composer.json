@@ -12,7 +12,8 @@
     }
   ],
   "require": {
-    "drupal/content_moderation_notifications": ">=3.0"
+    "drupal/content_moderation_notifications": "^3.0",
+    "drupal/diff": "^1.8"
   },
   "version": "1.0.1"
 }
