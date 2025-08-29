@@ -11,6 +11,8 @@ install:
   - diff
 config:
   strict: false
+  import:
+    content_moderation: '*'
   actions:
     workflows.workflow.editorial:
       addNodeTypes:
