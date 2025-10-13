@@ -4,75 +4,63 @@ dependencies:
   module:
     - content_moderation
 id: editorial
-label: Editorial
+label: 'Editorial workflow'
 type: content_moderation
 type_settings:
   states:
-    draft:
-      label: Draft
-      weight: -3
+    archived:
+      label: Archived
+      weight: 1
       published: false
       default_revision: false
-    publish_and_notify:
-      label: 'Publish & notify'
-      weight: 0
-      published: true
-      default_revision: true
-    published:
-      label: Published
-      weight: -1
-      published: true
-      default_revision: true
-    ready_for_review:
-      label: 'Ready for review'
+    draft:
+      label: Draft
       weight: -2
       published: false
       default_revision: false
-    unpublished:
-      label: Unpublished
-      weight: 1
-      published: false
+    published:
+      label: Published
+      weight: 0
+      published: true
       default_revision: true
+    review:
+      label: 'Ready for review'
+      weight: -1
+      published: false
+      default_revision: false
   transitions:
+    archive:
+      label: Archive
+      from:
+        - draft
+        - published
+        - review
+      to: archived
+      weight: 1
     create_new_draft:
       label: 'Create New Draft'
       from:
+        - archived
         - draft
         - published
-        - ready_for_review
+        - review
       to: draft
-      weight: -3
-    finalize_draft:
-      label: 'Finalize draft'
-      from:
-        - draft
-        - published
-        - ready_for_review
-      to: ready_for_review
       weight: -2
     publish:
       label: Publish
       from:
+        - archived
         - draft
-        - publish_and_notify
         - published
-        - ready_for_review
+        - review
       to: published
-      weight: -1
-    publish_notify:
-      label: 'Publish & notify'
-      from:
-        - draft
-        - publish_and_notify
-        - published
-        - ready_for_review
-      to: publish_and_notify
       weight: 0
-    unpublish:
-      label: Unpublish
+    review:
+      label: Review
       from:
-        - published
-      to: unpublished
-      weight: 1
+        - archived
+        - draft
+      to: review
+      weight: -1
   entity_types: {  }
   default_moderation_state: draft

@@ -1,5 +1,5 @@
 name: 'Bikeclub Editorial workflow'
-description: 'Provides user roles and editorial workflow for content types other than rides. (Ride recipe includes this for rides.)'
+description: 'Provides user roles and editorial workflow for content types other than rides.'
 type: 'Workflow'
 install:
   - content_moderation
@@ -17,8 +17,10 @@ config:
     workflows.workflow.editorial:
       addNodeTypes:
         - announcement
+        - event
         - faqs
         - page
+        - webform
     # Editor and content_creator are created in config folder.
     # Workflow permissions are listed here to easily compare roles.
     user.role.content_creator:
